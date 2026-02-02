@@ -8,9 +8,9 @@ from __future__ import annotations
 
 __all__ = ["Transform", "Linear", "Cholesky", "Subspace"]
 
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from functools import partial
-from typing import Any, Callable
+from typing import Any
 
 import equinox as eqx
 import jax.numpy as jnp

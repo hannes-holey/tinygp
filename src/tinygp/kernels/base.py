@@ -12,8 +12,8 @@ __all__ = [
 ]
 
 from abc import abstractmethod
-from collections.abc import Sequence
-from typing import TYPE_CHECKING, Any, Callable, Union
+from collections.abc import Callable, Sequence
+from typing import TYPE_CHECKING, Any, Union
 
 import equinox as eqx
 import jax

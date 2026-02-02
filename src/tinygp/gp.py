@@ -2,12 +2,11 @@ from __future__ import annotations
 
 __all__ = ["GaussianProcess"]
 
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from functools import partial
 from typing import (
     TYPE_CHECKING,
     Any,
-    Callable,
     NamedTuple,
 )
 
