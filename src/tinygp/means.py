@@ -45,7 +45,7 @@ class Mean(MeanBase):
     def __init__(self, value: JAXArray | Callable[[JAXArray], JAXArray]):
         if callable(value):
             self.func = value
-            self.value = jax.numpy.zeros(())
+            self.value = jax.numpy.zeros(())  # avoids undefined traced values
         else:
             self.value = value
 
