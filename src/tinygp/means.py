@@ -13,7 +13,7 @@ from __future__ import annotations
 __all__ = ["Mean", "Conditioned"]
 
 from abc import abstractmethod
-from typing import Callable
+from collections.abc import Callable
 
 import equinox as eqx
 import jax
@@ -39,18 +39,18 @@ class Mean(MeanBase):
             signature.
     """
 
-    value: JAXArray | None = None
+    value: JAXArray
     func: Callable[[JAXArray], JAXArray] | None = eqx.field(default=None, static=True)
 
     def __init__(self, value: JAXArray | Callable[[JAXArray], JAXArray]):
         if callable(value):
             self.func = value
+            self.value = jax.numpy.zeros(())  # avoids undefined traced values
         else:
             self.value = value
 
     def __call__(self, X: JAXArray) -> JAXArray:
-        if self.value is None:
-            assert self.func is not None
+        if self.func is not None:
             return self.func(X)
         return self.value
 

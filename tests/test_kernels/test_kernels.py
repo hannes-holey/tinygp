@@ -71,7 +71,7 @@ def test_ops(data):
 
 def test_conditioned(data):
     x1, x2 = data
-    with jax.experimental.enable_x64():  # type: ignore
+    with jax.enable_x64(True):  # type: ignore
         k1 = 1.5 * kernels.Matern32(2.5)
         k2 = 0.9 * kernels.ExpSineSquared(scale=1.5, gamma=0.3)
         K = k1(x1, x1) + 0.1 * jnp.eye(x1.shape[0])

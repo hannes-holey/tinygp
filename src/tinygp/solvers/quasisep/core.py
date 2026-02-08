@@ -18,8 +18,9 @@ __all__ = [
 
 import dataclasses
 from abc import abstractmethod
+from collections.abc import Callable
 from functools import wraps
-from typing import Any, Callable
+from typing import Any
 
 import equinox as eqx
 import jax

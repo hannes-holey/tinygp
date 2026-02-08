@@ -12,8 +12,8 @@ __all__ = [
 ]
 
 from abc import abstractmethod
-from collections.abc import Sequence
-from typing import TYPE_CHECKING, Any, Callable, Union
+from collections.abc import Callable, Sequence
+from typing import TYPE_CHECKING, Any
 
 import equinox as eqx
 import jax
@@ -24,7 +24,7 @@ from tinygp.helpers import JAXArray
 if TYPE_CHECKING:
     from tinygp.solvers.solver import Solver
 
-Axis = Union[int, Sequence[int]]
+Axis = int | Sequence[int]
 
 
 class Kernel(eqx.Module):

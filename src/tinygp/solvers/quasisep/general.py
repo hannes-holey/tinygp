@@ -16,8 +16,9 @@ from __future__ import annotations
 
 __all__ = ["GeneralQSM"]
 
+from collections.abc import Callable
 from functools import wraps
-from typing import Any, Callable
+from typing import Any
 
 import equinox as eqx
 import jax

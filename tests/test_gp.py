@@ -24,7 +24,7 @@ def data(random):
 def test_sample(data):
     X, _ = data
 
-    with jax.experimental.enable_x64(True):
+    with jax.enable_x64(True):
         gp = GaussianProcess(
             kernels.Matern32(1.5), X, diag=0.01, mean=lambda x: jnp.sum(x)
         )

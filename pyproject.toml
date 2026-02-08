@@ -3,7 +3,7 @@ name = "tinygp"
 description = "The tiniest of Gaussian Process libraries"
 authors = [{ name = "Dan Foreman-Mackey", email = "foreman.mackey@gmail.com" }]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = { text = "MIT" }
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -45,11 +45,11 @@ source = "vcs"
 version-file = "src/tinygp/tinygp_version.py"
 
 [tool.black]
-target-version = ["py39"]
+target-version = ["py312"]
 line-length = 88
 
 [tool.ruff]
-target-version = "py39"
+target-version = "py312"
 line-length = 88
 
 [tool.ruff.lint]
@@ -60,6 +60,7 @@ ignore = [
     "PLR0913", # Allow many arguments to functions
     "PLR0915", # Allow many statements
     "PLR2004", # Allow magic numbers in comparisons
+    "B905",    # Allow zip() without explicit `strict=` parameter
 ]
 exclude = []
 
